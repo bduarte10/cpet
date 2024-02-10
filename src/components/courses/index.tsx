@@ -1,6 +1,6 @@
 import { useCourses } from '@/hooks/useCourses';
 import { Course } from '../course';
-import { Loader } from '../ui/loader';
+import { SkeletonCard } from '../skeletonCard';
 
 interface ICourse {
   id: string;
@@ -20,7 +20,7 @@ export const Courses = () => {
           Confira os Cursos Disponíveis no EAD da Cpet com DESCONTOS DE ATÉ 80%
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
-          {isLoading && <Loader />}
+          {isLoading && [1, 2, 3, 4].map(() => <SkeletonCard />)}
           {courses?.map((course: ICourse) => (
             <Course key={course.id} course={course} />
           ))}

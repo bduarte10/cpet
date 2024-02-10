@@ -1,6 +1,8 @@
 import { Outlet, useNavigation } from 'react-router-dom';
 import { Loader } from '../components/ui/loader';
 import { Header } from '../components/header';
+import { Whatsapp } from '@/components/whatsapp';
+import { Footer } from '@/components/footer';
 
 export function AppLayout() {
   const navigation = useNavigation();
@@ -16,6 +18,8 @@ export function AppLayout() {
         <main className="mx-auto ">
           <Outlet />
         </main>
+        <Footer />
+        <Whatsapp />
       </div>
     </div>
   );

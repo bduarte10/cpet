@@ -1,4 +1,3 @@
-import { Footer } from '@/components/footer';
 import { Courses } from '../components/courses';
 import { Hero } from '../components/hero';
 import { Faq } from '@/components/faq';
@@ -9,7 +8,6 @@ export const Home = () => {
       <Hero />
       <Courses />
       <Faq />
-      <Footer />
     </>
   );
 };
