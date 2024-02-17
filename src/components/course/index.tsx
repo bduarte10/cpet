@@ -3,33 +3,33 @@ import {
   CardContent,
   CardFooter,
   CardHeader,
-  CardTitle
-} from '@/components/ui/card';
-import { Button } from '../ui/button';
-import { Link } from 'react-router-dom';
-import { Check } from 'lucide-react';
-import { courseImg } from '@/constants/courses';
+  CardTitle,
+} from '@/components/ui/card'
+import { Button } from '../ui/button'
+import { Link } from 'react-router-dom'
+import { Check } from 'lucide-react'
+import { courseData } from '@/constants/courses'
 interface CourseProps {
   course: {
-    id: string;
-    name: string;
-    type: string;
-    duration: string;
-    duration_type: string;
-    discount_percent: string;
-  };
+    id: string
+    name: string
+    type: string
+    duration: string
+    duration_type: string
+    discount_percent: string
+  }
 }
 
 export const Course = ({ course }: CourseProps) => {
-  const { id, name, duration, discount_percent } = course;
+  const { id, name, duration, discount_percent } = course
 
-  const imgSrc = courseImg.find((course) => course.id === id)?.imgUrl;
+  const imgSrc = courseData.find((course) => course.id === id)?.imgUrl
 
   return (
     <Card className="flex flex-col justify-between">
-      <CardHeader className="pb-4">
+      <CardHeader className="pb-4 ">
         <img
-          className="aspect-auto object-cover rounded mb-4 "
+          className="aspect-auto object-cover rounded mb-4 h-[180px] "
           src={imgSrc}
           alt=""
         />
@@ -53,5 +53,5 @@ export const Course = ({ course }: CourseProps) => {
         </Button>
       </CardFooter>
     </Card>
-  );
-};
+  )
+}

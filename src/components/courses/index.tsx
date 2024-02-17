@@ -1,18 +1,21 @@
-import { useCourses } from '@/hooks/useCourses';
-import { Course } from '../course';
-import { SkeletonCard } from '../skeletonCard';
+import { useCourses } from '@/hooks/useCourses'
+import { Course } from '../course'
+import { SkeletonCard } from '../skeletonCard'
 
 interface ICourse {
-  id: string;
-  name: string;
-  type: string;
-  duration: string;
-  duration_type: string;
-  discount_percent: string;
+  id: string
+  name: string
+  type: string
+  duration: string
+  duration_type: string
+  discount_percent: string
 }
 export const Courses = () => {
-  const { data: courses, isLoading } = useCourses();
-
+  const { data: courses, isLoading } = useCourses()
+  const filteredCourses = courses?.filter(
+    (course: any) =>
+      course?.id !== '7287' && course?.id !== '7288' && course?.id !== '7286'
+  )
   return (
     <section id="cursos" className="w-full bg-slate-100">
       <div className="max-w-7xl py-14 px-10 lg:px-0 lg:mx-auto">
@@ -21,11 +24,11 @@ export const Courses = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 ">
           {isLoading && [1, 2, 3, 4].map(() => <SkeletonCard />)}
-          {courses?.map((course: ICourse) => (
+          {filteredCourses?.map((course: ICourse) => (
             <Course key={course.id} course={course} />
           ))}
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

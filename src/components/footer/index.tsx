@@ -4,9 +4,12 @@ export const Footer = () => {
       <div className="max-w-7xl mx-auto flex items-center justify-center h-full">
         <div className="h-full flex items-center gap-4"></div>
         <div>
-          <p>Copyright © 2024 Cpet. Todos os direitos reservados.</p>
+          <p>
+            Copyright © {new Date().getFullYear()} ConectaEdu - Todos os
+            direitos reservados.
+          </p>
         </div>
       </div>
     </footer>
-  );
-};
+  )
+}
