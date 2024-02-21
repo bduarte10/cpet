@@ -1866,7 +1866,7 @@ export const courseData: ICourseData[] = [
     ],
   },
   {
-    id: '7284',
+    id: '3350',
     imgUrl: image.juridicos,
     curriculum: [
       {
