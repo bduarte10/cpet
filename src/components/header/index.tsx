@@ -7,16 +7,19 @@ import {
 } from '@/components/ui/navigation-menu'
 import { Link } from 'react-router-dom'
 import { Button } from '../ui/button'
+import logoCPET from '@/assets/cpet.png'
+import logoBolsa from '@/assets/bolsa.png'
+
 export const Header = () => {
   return (
     <header className=" w-full h-24 bg-slate-100">
       <div className="max-w-7xl mx-auto space-x-4 flex items-center justify-end h-full">
-        <div className="h-full flex items-center gap-4 mr-auto">
+        <div className="h-full flex flex-row items-center gap-4 mr-auto">
           <Link to="/">
             <img className="h-12" src={logo} alt="logo conectaedu" />
-            {/* <img className="h-20" src={logoCPET} alt="logo CPET" />
-          <img className="h-20" src={logoBolsa} alt="logo bolsa mais" /> */}
           </Link>
+          <img className="h-16" src={logoCPET} alt="logo CPET" />
+          <img className="h-16" src={logoBolsa} alt="logo bolsa mais" />
         </div>
         <NavigationMenu>
           <NavigationMenuList className="hidden md:flex gap-4">
