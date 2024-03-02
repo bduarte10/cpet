@@ -14,7 +14,10 @@ export const Courses = () => {
   const { data: courses, isLoading } = useCourses()
   const filteredCourses = courses?.filter(
     (course: any) =>
-      course?.id !== '7287' && course?.id !== '7288' && course?.id !== '7286'
+      course?.id !== '7287' &&
+      course?.id !== '7288' &&
+      course?.id !== '7286' &&
+      course?.id !== '4804',
   )
   return (
     <section id="cursos" className="w-full bg-slate-100">

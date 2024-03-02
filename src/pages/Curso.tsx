@@ -16,7 +16,7 @@ export const Curso = () => {
 
   const videoUrl = courseData.find((course) => course.id === id)?.videoUrl
   const dataAccordion = courseData.find(
-    (course) => course.id === id
+    (course) => course.id === id,
   )?.curriculum
 
   const course = data?.[0]
@@ -35,18 +35,16 @@ export const Curso = () => {
             <Button
               asChild
               variant={'outline'}
-              className="mt-4 w-fit h-14 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400"
-            >
+              className="mt-4 w-fit h-14 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400">
               <Link
                 className="font-bold"
-                to={course?.pagina_venda_bolsamaisbrasil}
-              >
+                to={course?.pagina_venda_bolsamaisbrasil}>
                 Saiba mais sobre o curso
               </Link>
             </Button>
           </div>
         </div>
-        <div className="max-w-7xl  mx-auto h-full px-10 xl:px-0 grid grid-cols-3 grid-flow-row">
+        <div className="max-w-7xl  mx-auto h-full px-10 xl:px-0 grid grid-cols-1 md:grid-cols-3 grid-flow-row">
           <div className="col-span-2 pr-5 mt-8">
             {videoUrl && (
               <iframe
@@ -54,8 +52,7 @@ export const Curso = () => {
                 src={`https://www.youtube.com/embed/${videoUrl}`}
                 title={course?.course}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowFullScreen
-              ></iframe>
+                allowFullScreen></iframe>
             )}
             <div className="mb-8 mt-4">
               <h2 className="text-3xl text-balance mb-2  font-bold leading-relaxed text-sky-800">
@@ -76,7 +73,7 @@ export const Curso = () => {
                 necessários para se destacar nessa área em constante evolução.
               </p>
             </div>
-            <div className="w-3/4">
+            <div className="w-full">
               <DynamicAccordion data={dataAccordion} />
             </div>
           </div>
@@ -96,12 +93,10 @@ export const Curso = () => {
               <Button
                 asChild
                 variant={'outline'}
-                className=" w-fit h-10 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400"
-              >
+                className=" w-fit h-10 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400">
                 <Link
                   className="font-bold"
-                  to={course?.pagina_venda_bolsamaisbrasil}
-                >
+                  to={course?.pagina_venda_bolsamaisbrasil}>
                   REALIZAR MATRÍCULA
                 </Link>
               </Button>
@@ -131,8 +126,7 @@ export const Curso = () => {
             <form
               action="https://formsubmit.co/duartebruno2208@gmail.com"
               method="POST"
-              className="space-y-4 pt-5"
-            >
+              className="space-y-4 pt-5">
               <h3 className="text-center font-semibold">
                 RECEBA MAIS INFORMAÇÕES DE UM CONSULTOR
               </h3>

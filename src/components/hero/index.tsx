@@ -1,5 +1,5 @@
-import imgHero from '@/assets/imgHero.png';
-import { Button } from '../ui/button';
+import imgHero from '@/assets/imgHero.png'
+import { Button } from '../ui/button'
 export const Hero = () => {
   return (
     <section className="w-full  bg-[url('@/assets/bg.jpg')] h-5/6 ">
@@ -8,11 +8,10 @@ export const Hero = () => {
           <span className="text-[#FDD105] text-2xl">Educação</span>
           <h1 className="leading-normal mb-4 text-2xl md:text-6xl">
             Cursos Técnicos EAD
-            <br /> mais baratos do <span className="text-[#FDD105]">Brasil</span>
+            <br /> mais baratos do{' '}
+            <span className="text-[#FDD105]">Brasil</span>
           </h1>
-          <p className="text-sm font-normal mb-4">
-            Confira os Cursos Disponíveis no EAD da Cpet com DESCONTOS DE ATÉ 80%
-          </p>
+
           <Button variant={'secondary'} className="">
             Conheça os Cursos
           </Button>
@@ -22,5 +21,5 @@ export const Hero = () => {
         </div>
       </div>
     </section>
-  );
-};
+  )
+}

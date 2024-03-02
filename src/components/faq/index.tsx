@@ -2,18 +2,18 @@ import {
   Accordion,
   AccordionContent,
   AccordionItem,
-  AccordionTrigger
-} from '@/components/ui/accordion';
+  AccordionTrigger,
+} from '@/components/ui/accordion'
 
 export const Faq = () => {
   return (
     <div className="max-w-7xl w-full mx-auto px-10 pt-12 pb-20">
-      <h2 className="max-w-2xl mx-auto text-2xl mb-10 font-extrabold text-center text-slate-900">
+      <h2 className="max-w-2x w-full mx-auto text-2xl mb-10 font-extrabold text-center text-slate-900">
         Perguntas Frequentes
       </h2>
-      <div className="w-full flex justify-center">
+      <div className="flex w-full justify-center">
         {/* <div>col 1</div> */}
-        <div>
+        <div className="w-full">
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
               <AccordionTrigger className="text-left">
@@ -94,8 +94,7 @@ export const Faq = () => {
                 pode verificar nossas portarias de autorização{' '}
                 <a
                   className="underline"
-                  href="https://sistec.mec.gov.br/consultapublicaunidadeensino/"
-                >
+                  href="https://sistec.mec.gov.br/consultapublicaunidadeensino/">
                   clicando aqui
                 </a>
                 .<br /> Após receber o certificado de conclusão técnico nível
@@ -105,8 +104,7 @@ export const Faq = () => {
                 (MT). Todo Certificado pode ser validado junto ao MEC{' '}
                 <a
                   className="underline"
-                  href="https://sistec.mec.gov.br/validadenacional/"
-                >
+                  href="https://sistec.mec.gov.br/validadenacional/">
                   {' '}
                   clicando aqui
                 </a>
@@ -161,5 +159,5 @@ export const Faq = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
