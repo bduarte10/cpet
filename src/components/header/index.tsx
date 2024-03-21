@@ -18,8 +18,16 @@ export const Header = () => {
           <Link to="/">
             <img className="h-12" src={logo} alt="logo conectaedu" />
           </Link>
-          <img className="h-16" src={logoCPET} alt="logo CPET" />
-          <img className="h-16" src={logoBolsa} alt="logo bolsa mais" />
+          <img
+            className="h-14 hidden md:block"
+            src={logoCPET}
+            alt="logo CPET"
+          />
+          <img
+            className="h-14 hidden md:block"
+            src={logoBolsa}
+            alt="logo bolsa mais"
+          />
         </div>
         <NavigationMenu>
           <NavigationMenuList className="hidden md:flex gap-4">
@@ -30,14 +38,25 @@ export const Header = () => {
             </NavigationMenuItem>
             <NavigationMenuItem>
               <NavigationMenuLink asChild>
+                <NavigationMenuLink href="/#sobre">Sobre</NavigationMenuLink>
+              </NavigationMenuLink>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
+              <NavigationMenuLink asChild>
                 <NavigationMenuLink href="/#cursos">Cursos</NavigationMenuLink>
               </NavigationMenuLink>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
-        <Button variant={'whatsApp'} className="px-10">
-          Entre em contato
-        </Button>
+        <a
+          href="https://wa.me/+5538984058014"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="">
+          <Button variant={'whatsApp'} className="px-10">
+            Entre em contato
+          </Button>
+        </a>
       </div>
     </header>
   )

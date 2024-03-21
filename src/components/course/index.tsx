@@ -9,6 +9,7 @@ import { Button } from '../ui/button'
 import { Link } from 'react-router-dom'
 import { Check } from 'lucide-react'
 import { courseData } from '@/constants/courses'
+
 interface CourseProps {
   course: {
     id: string

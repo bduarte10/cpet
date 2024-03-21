@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button'
 import { Loader } from '@/components/ui/loader'
 import { useCourseById } from '@/hooks/useCourseById'
 import { Link, useParams } from 'react-router-dom'
+import axios from 'axios'
 
 import { formatCurrency } from '@/utils/functions'
 import { Clock, GraduationCap, Laptop, Trophy } from 'lucide-react'
@@ -9,10 +10,48 @@ import { Separator } from '@/components/ui/separator'
 import { courseData } from '@/constants/courses'
 import { Input } from '@/components/ui/input'
 import DynamicAccordion from '@/components/dinamicAccordion'
+import { useEffect, useRef, useState } from 'react'
+import Selo from '@/assets/selo.png'
+interface FormData {
+  nome: string
+  email: string
+  celular: string
+}
 
 export const Curso = () => {
   let { id } = useParams()
   const { data, isLoading } = useCourseById(Number(id))
+
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [celular, setCelular] = useState('')
+  const [sending, setSending] = useState(false)
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault() // Evite o comportamento padrão de envio do formulário
+
+    // Construa o objeto de dados a serem enviados
+    const data: FormData = {
+      nome: nome,
+      email: email,
+      celular: celular,
+    }
+
+    try {
+      setSending(true)
+      const response = await axios.post('/send-email', data)
+      console.log(response.data) // Exibe a resposta do servidor no console
+
+      // Limpe os campos do formulário após o envio bem-sucedido
+      setNome('')
+      setEmail('')
+      setCelular('')
+      setSending(false)
+    } catch (error) {
+      console.error('Erro ao enviar e-mail:', error)
+      // Trate o erro, se necessário
+    }
+  }
 
   const videoUrl = courseData.find((course) => course.id === id)?.videoUrl
   const dataAccordion = courseData.find(
@@ -20,9 +59,18 @@ export const Curso = () => {
   )?.curriculum
 
   const course = data?.[0]
+
+  const topRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    if (topRef.current) {
+      topRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+  }, [])
+
   return (
     <>
-      <section className="mb-10">
+      <section ref={topRef} className="mb-10">
         {isLoading && <Loader />}
         <div className=" pt-24 pb-14 w-full flex items-center mx-auto px-10 bg-sky-800">
           <div className="max-w-7xl w-full mx-auto  flex flex-start flex-col">
@@ -39,7 +87,7 @@ export const Curso = () => {
               <Link
                 className="font-bold"
                 to={course?.pagina_venda_bolsamaisbrasil}>
-                Saiba mais sobre o curso
+                GARANTA AGORA!
               </Link>
             </Button>
           </div>
@@ -78,7 +126,12 @@ export const Curso = () => {
             </div>
           </div>
           <div className="max-w-96 space-y-1 shadow-xl p-4 flex flex-col  items-center bg-white rounded-sm ">
-            <div className="p-5 space-y-2 flex flex-col w-full rounded-sm">
+            <div className=" relative p-5 space-y-2 flex flex-col w-full rounded-sm">
+              <img
+                src={Selo}
+                alt="Selo de qualidade"
+                className="absolute top-0 right-0 w-16 md:w-28 "
+              />
               <p className="text-sm text-foreground line-through font-medium">
                 {course?.original_installments}x KTR
                 {formatCurrency(Number(course?.original_price))}
@@ -123,17 +176,38 @@ export const Curso = () => {
               <p className="text-base text-sky-800 font-medium">EAD</p>
             </div>
             <Separator />
-            <form
-              action="https://formsubmit.co/duartebruno2208@gmail.com"
-              method="POST"
-              className="space-y-4 pt-5">
-              <h3 className="text-center font-semibold">
-                RECEBA MAIS INFORMAÇÕES DE UM CONSULTOR
-              </h3>
-              <Input type="text" name="name" placeholder="Seu Nome" />
-              <Input type="email" name="email" placeholder="E-mail" />
-              <Input name="celular" placeholder="Celular com DDD" />
-              <Button className="w-full bg-sky-800 hover:bg-sky-900">
+            <form onSubmit={handleSubmit} className="space-y-4 pt-5">
+              <div className="space-y-2">
+                <h3 className="text-center font-semibold ">TENHO INTERESSE</h3>
+                <p className="text-center text-sm  ">
+                  <span className="font-bold ">Preencha o formulário</span> e
+                  nossa equipe entrará em contato
+                </p>
+              </div>
+              <Input
+                type="text"
+                name="name "
+                placeholder="Seu Nome"
+                value={nome}
+                onChange={(event) => setNome(event.target.value)}
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder="E-mail"
+                value={email}
+                onChange={(event) => setEmail(event.target.value)}
+              />
+              <Input
+                name="celular"
+                placeholder="Celular com DDD"
+                value={celular}
+                onChange={(event) => setCelular(event.target.value)}
+              />
+              <Button
+                type="submit"
+                disabled={sending}
+                className="w-full bg-sky-800 hover:bg-sky-900 ">
                 ENVIAR
               </Button>
             </form>

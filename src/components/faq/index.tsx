@@ -4,19 +4,42 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion'
+import logoBolsa from '@/assets/bolsa.png'
+import { Button } from '../ui/button'
 
 export const Faq = () => {
   return (
-    <div className="max-w-7xl w-full mx-auto px-10 pt-12 pb-20">
-      <h2 className="max-w-2x w-full mx-auto text-2xl mb-10 font-extrabold text-center text-slate-900">
-        Perguntas Frequentes
-      </h2>
-      <div className="flex w-full justify-center">
-        {/* <div>col 1</div> */}
-        <div className="w-full">
+    <div
+      id="sobre"
+      className="max-w-7xl w-full mx-auto px-10 pt-12 pb-20 bg-slate-100 rounded-md mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-3 w-full md:space-x-20 justify-center">
+        <div className=" mb-10 md:mb-0">
+          <img className="h-24 mb-10" src={logoBolsa} alt="logo bolsa mais" />
+
+          <div className="mb-5 text-justify text-sm ">
+            <h3 className=" text-xl font-bold pb-3">Bolsas de Até 80%</h3>
+            Bolsas de Estudo de até 80% nas melhores escolas e faculdades do
+            país. Escolha a instituição de sua preferência, cadastre-se e comece
+            a estudar agora mesmo.
+          </div>
+          <div className="text-justify text-sm">
+            <h3 className="text-xl font-bold pb-3">Sobre o programa</h3> O
+            programa Bolsa Mais Brasil foi criado para ser o maior programa de
+            incentivo a educação do país. Nosso objetivo é promover a inclusão
+            de grande parcela da população, que não ingressa nas escolas e
+            universidades públicas, garantindo uma mensalidade acessível e um
+            estudo de qualidade nas melhores escolas e universidades
+            particulares do país, através das bolsas de estudo oferecidas pelas
+            instituições cadastradas em nosso programa.
+          </div>
+        </div>
+        <div className="col-span-2">
+          <h2 className="max-w-2x w-full mx-auto text-2xl mb-4 md:mb-10 font-extrabold  text-slate-900">
+            Perguntas Frequentes
+          </h2>
           <Accordion type="single" collapsible>
             <AccordionItem value="item-1">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 QUANTO TEMPO DEMORA PARA EU TER ACESSO AS AULAS?
               </AccordionTrigger>
               <AccordionContent>
@@ -28,7 +51,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-2">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 QUANTAS VEZES EU POSSO ACESSAR ÀS AULAS?
               </AccordionTrigger>
               <AccordionContent>
@@ -40,7 +63,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-3">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 POSSO ACESSAR MEU CURSO EM QUALQUER LUGAR?
               </AccordionTrigger>
               <AccordionContent>
@@ -56,7 +79,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-4">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 O CURSO É 100% ONLINE?
               </AccordionTrigger>
               <AccordionContent>
@@ -71,7 +94,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-5">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 QUANTO TEMPO DEMORA PARA EU CONCLUIR O CURSO?
               </AccordionTrigger>
               <AccordionContent>
@@ -85,7 +108,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-6">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 O CERTIFICADO É VÁLIDO PELO MEC? POSSO ME REGISTRAR JUNTO AO
                 CONSELHO DO MEU CURSO?
               </AccordionTrigger>
@@ -112,7 +135,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-7">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 POSSO REGISTRAR MEU CERTIFICADO NO CONSELHO DO MEU ESTADO?
               </AccordionTrigger>
               <AccordionContent>
@@ -123,7 +146,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-8">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 JÁ TRABALHO NA ÁREA DO CURSO, POSSO REALIZAR APENAS AS PROVAS?
               </AccordionTrigger>
               <AccordionContent>
@@ -141,7 +164,7 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
             <AccordionItem value="item-9">
-              <AccordionTrigger className="text-left">
+              <AccordionTrigger className="text-sm text-left">
                 EU JÁ SOU FORMADO EM OUTRO CURSO, CONSIGO APROVEITAR COMPONENTES
                 CURRICULARES CORRELATOS?
               </AccordionTrigger>
@@ -156,6 +179,10 @@ export const Faq = () => {
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <Button variant={'whatsApp'} className="w-full px-10 mt-10">
+            Realizar meu cadastro
+          </Button>
         </div>
       </div>
     </div>
