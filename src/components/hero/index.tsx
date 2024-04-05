@@ -30,7 +30,8 @@ export const Hero = () => {
 
     try {
       setSending(true)
-      await axios.post('/send-email', data)
+      //await axios.post('/send-email', data)
+      await axios.post('/lead/email/send', data)
       setNome('')
       setEmail('')
       setCelular('')
