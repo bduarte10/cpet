@@ -31,25 +31,33 @@ export const Curso = () => {
     event.preventDefault() // Evite o comportamento padrão de envio do formulário
 
     // Construa o objeto de dados a serem enviados
-    const data: FormData = {
+    const formData: FormData = {
       nome: nome,
       email: email,
       celular: celular,
     }
 
     try {
-      setSending(true)
-      const response = await axios.post('/send-email', data)
-      console.log(response.data) // Exibe a resposta do servidor no console
+      const course = data?.[0];
+
+      setSending(true);
+
+      //const response = await axios.post('/send-email', data)
+      const response = await axios.post('/lead/email/send', formData);
+      console.log(response.data); // Exibe a resposta do servidor no console
 
       // Limpe os campos do formulário após o envio bem-sucedido
-      setNome('')
-      setEmail('')
-      setCelular('')
-      setSending(false)
+      setNome('');
+      setEmail('');
+      setCelular('');
+      setSending(false);
     } catch (error) {
       console.error('Erro ao enviar e-mail:', error)
       // Trate o erro, se necessário
+    } finally {
+      setTimeout(() => {
+        window.open(`${course?.pagina_venda_embaixador}?studant_name=${formData.nome}&studant_email=${formData.email}&studant_cell_phone=${formData.celular}`, '_blank')
+      }, 2000);
     }
   }
 
@@ -86,7 +94,7 @@ export const Curso = () => {
               className="mt-4 w-fit h-14 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400">
               <Link
                 className="font-bold"
-                to={course?.pagina_venda_bolsamaisbrasil}>
+                to={course?.pagina_venda_embaixador}>
                 GARANTA AGORA!
               </Link>
             </Button>
@@ -149,7 +157,7 @@ export const Curso = () => {
                 className=" w-fit h-10 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400">
                 <Link
                   className="font-bold"
-                  to={course?.pagina_venda_bolsamaisbrasil}>
+                  to={course?.pagina_venda_embaixador}>
                   REALIZAR MATRÍCULA
                 </Link>
               </Button>
