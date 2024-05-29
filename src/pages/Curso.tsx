@@ -1,17 +1,18 @@
 import { Button } from "@/components/ui/button";
 import { Loader } from "@/components/ui/loader";
 import { useCourseById } from "@/hooks/useCourseById";
-import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+import { Link, useParams } from "react-router-dom";
 
-import { formatCurrency } from "@/utils/functions";
-import { Clock, GraduationCap, Laptop, Trophy } from "lucide-react";
+import Selo from "@/assets/selo.png";
+import DynamicAccordion from "@/components/dinamicAccordion";
+import { Input } from "@/components/ui/input";
 import { Separator } from "@/components/ui/separator";
 import { courseData } from "@/constants/courses";
-import { Input } from "@/components/ui/input";
-import DynamicAccordion from "@/components/dinamicAccordion";
+import { formatCurrency } from "@/utils/functions";
+import { Star } from "@phosphor-icons/react";
+import { Clock, GraduationCap, Laptop, Trophy } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import Selo from "@/assets/selo.png";
 interface FormData {
   nome: string;
   email: string;
@@ -76,25 +77,53 @@ export const Curso = () => {
     <>
       <section ref={topRef} className="mb-10">
         {isLoading && <Loader />}
-        <div className=" pt-24 pb-14 w-full flex items-center mx-auto px-10 bg-sky-800">
-          <div className="max-w-7xl w-full mx-auto  flex flex-start flex-col">
-            <h1 className="text-4xl w-4/5 text-balance mb-2 text-yellow-300 font-extrabold">{course?.course}</h1>
-            <p className="text-lg italic text-balance font-medium text-white">
-              Prepare-se para oportunidades de carreira imperdíveis!
-            </p>
-            <Button
-              asChild
-              variant={"outline"}
-              className="mt-4 w-fit h-14 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400"
-            >
-              <Link className="font-bold" to={course?.pagina_venda_embaixador}>
-                GARANTA AGORA!
-              </Link>
-            </Button>
+        <div className="bg-[url('@/assets/fundoazul.png')] bg-cover bg-center">
+          <div className="pt-14 pb-14 w-full flex flex-col-reverse gap-10 items-center justify-center mx-auto 
+        md:justify-between md:flex-row max-w-7xl md:gap-0">
+            <div className="flex items-center justify-center text-center flex-col md:flex-start">
+              <h1 className="text-4xl w-4/5 text-balance font-semibold mb-2 text-customerPrimary">{course?.course}</h1>
+              <p className="text-lg text-balance font-medium text-white md:text-xl">
+                Não deixe nada atrapalhar o seu futuro!
+              </p>
+              <div className="flex gap-2 mt-3">
+                <Button
+                  asChild
+                  className=" bg-customerPrimary text-neutral-700 hover:bg-yellow-300"
+                >
+                  <Link to={course?.pagina_venda_embaixador}>
+                    Matricule-se
+                  </Link>
+                </Button >
+
+                <a
+                  href="https://wa.me/+5538984058014"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="">
+                  <Button className="bg-customerPrimary text-neutral-700 hover:bg-yellow-300">
+                    Falar com Consultor
+                  </Button>
+                </a>
+              </div>
+            </div>
+            <div className="flex flex-col items-center">
+              <img src={Selo} alt="Selo" className="w-28" />
+              <p className="text-center text-white">
+                Instituição nota <br />
+                máxima MEC
+              </p>
+              <div className="flex gap-1 mt-1">
+                <Star size={20} color="#FDD105" />
+                <Star size={20} color="#FDD105" />
+                <Star size={20} color="#FDD105" />
+                <Star size={20} color="#FDD105" />
+                <Star size={20} color="#FDD105" />
+              </div>
+            </div>
           </div>
         </div>
         <div className="max-w-7xl  mx-auto h-full px-10 xl:px-0 grid grid-cols-1 md:grid-cols-3 grid-flow-row">
-          <div className="col-span-2 pr-5 mt-8">
+          <div className="col-span-2 md:pr-5 mt-8">
             {videoUrl && (
               <iframe
                 className="rounded aspect-video w-full "
@@ -105,7 +134,7 @@ export const Curso = () => {
               ></iframe>
             )}
             <div className="mb-8 mt-4">
-              <h2 className="text-3xl text-balance mb-2  font-bold leading-relaxed text-sky-800">
+              <h2 className="text-3xl text-balance mb-2  font-bold leading-relaxed text-customerSecondary">
                 Suporte e Acompanhamento
               </h2>
               <p className="text-lg text-balance font-normal text-slate-600 pr-2">
@@ -114,7 +143,7 @@ export const Curso = () => {
               </p>
             </div>
             <div className="mb-5">
-              <h2 className="text-3xl text-balance mb-2 font-bold  text-sky-800">
+              <h2 className="text-3xl text-balance mb-2 font-bold  text-customerSecondary">
                 Conheça a Grade Curricular do Curso
               </h2>
               <p className="text-lg text-balance font-normal text-slate-600 pr-2">
@@ -126,77 +155,77 @@ export const Curso = () => {
               <DynamicAccordion data={dataAccordion} />
             </div>
           </div>
-          <div className="max-w-96 space-y-1 shadow-xl p-4 flex flex-col  items-center bg-white rounded-sm ">
-            <div className=" relative p-5 space-y-2 flex flex-col w-full rounded-sm">
-              <img src={Selo} alt="Selo de qualidade" className="absolute top-0 right-0 w-16 md:w-28 " />
-              <p className="text-sm text-foreground line-through font-medium">
-                {course?.original_installments}x KTR
-                {formatCurrency(Number(course?.original_price))}
-              </p>
-              <p className="text-4xl font-bold text-sky-800">
-                <span className="text-2xl font-semibold text-sky-800">{course?.discount_installments}x </span>
-                {formatCurrency(Number(course?.discount_price))}
-              </p>
-              <p className="text-foreground text-xs ">NO CARTÃO DE CRÉDITO</p>
-              <Button
-                asChild
-                variant={"outline"}
-                className=" w-fit h-10 text-md text-sky-800 bg-yellow-300 hover:bg-yellow-400"
-              >
-                <Link className="font-bold" to={course?.pagina_venda_embaixador}>
-                  REALIZAR MATRÍCULA
-                </Link>
-              </Button>
-            </div>
-            <Separator />
-            <div className="w-full p-2 flex space-x-4 items-center justify-start">
-              {<GraduationCap size={33} className="text-sky-800" />}
-              <p className="text-base text-sky-800 font-medium">RECONHECIDO PELO MEC</p>
-            </div>
-            <div className="w-full p-2 flex space-x-4 items-center justify-start">
-              {<Clock size={30} className="text-sky-800" />}
-              <p className="text-base text-sky-800 font-medium">7 MESES</p>
-            </div>
-            <div className="w-full p-2 flex space-x-4 items-center justify-start">
-              {<Trophy size={30} className="text-sky-800" />}
-              <p className="text-base text-sky-800 font-medium">VÁLIDO EM TODO BRASIL</p>
-            </div>
-            <div className="w-full p-2 flex space-x-4 items-center justify-start">
-              {<Laptop size={30} className="text-sky-800" />}
-              <p className="text-base text-sky-800 font-medium">EAD</p>
-            </div>
-            <Separator />
-            <form onSubmit={handleSubmit} className="space-y-4 pt-5">
-              <div className="space-y-2">
-                <h3 className="text-center font-semibold ">TENHO INTERESSE</h3>
-                <p className="text-center text-sm  ">
-                  <span className="font-bold ">Preencha o formulário</span> e nossa equipe entrará em contato
+          <div>
+            <div className="max-w-96 space-y-1 p-4 flex flex-col mt-8 items-center bg-white rounded-sm shadow-xl">
+              <div className=" relative p-5 space-y-2 flex flex-col w-full rounded-sm">
+                <p className="text-sm text-foreground line-through font-medium">
+                  {course?.original_installments}x KTR
+                  {formatCurrency(Number(course?.original_price))}
                 </p>
+                <p className="text-4xl font-bold text-customerSecondary">
+                  <span className="text-2xl font-semibold text-customerSecondary">{course?.discount_installments}x </span>
+                  {formatCurrency(Number(course?.discount_price))}
+                </p>
+                <p className="text-foreground text-xs ">NO CARTÃO DE CRÉDITO</p>
+                <Button
+                  asChild
+                  className=" w-fit h-10 text-md bg-customerPrimary text-neutral-700 hover:bg-yellow-300"
+                >
+                  <Link className="font-bold" to={course?.pagina_venda_embaixador}>
+                    REALIZAR MATRÍCULA
+                  </Link>
+                </Button>
               </div>
-              <Input
-                type="text"
-                name="name "
-                placeholder="Seu Nome"
-                value={nome}
-                onChange={(event) => setNome(event.target.value)}
-              />
-              <Input
-                type="email"
-                name="email"
-                placeholder="E-mail"
-                value={email}
-                onChange={(event) => setEmail(event.target.value)}
-              />
-              <Input
-                name="celular"
-                placeholder="Celular com DDD"
-                value={celular}
-                onChange={(event) => setCelular(event.target.value)}
-              />
-              <Button type="submit" disabled={sending} className="w-full bg-sky-800 hover:bg-sky-900 ">
-                ENVIAR
-              </Button>
-            </form>
+              <Separator />
+              <div className="w-full p-2 flex space-x-4 items-center justify-start">
+                {<GraduationCap size={33} className="text-customerSecondary" />}
+                <p className="text-base text-customerSecondary font-medium">RECONHECIDO PELO MEC</p>
+              </div>
+              <div className="w-full p-2 flex space-x-4 items-center justify-start">
+                {<Clock size={30} className="text-customerSecondary" />}
+                <p className="text-base text-customerSecondary font-medium">7 MESES</p>
+              </div>
+              <div className="w-full p-2 flex space-x-4 items-center justify-start">
+                {<Trophy size={30} className="text-customerSecondary" />}
+                <p className="text-base text-customerSecondary font-medium">VÁLIDO EM TODO BRASIL</p>
+              </div>
+              <div className="w-full p-2 flex space-x-4 items-center justify-start">
+                {<Laptop size={30} className="text-customerSecondary" />}
+                <p className="text-base text-customerSecondary font-medium">EAD</p>
+              </div>
+              <Separator />
+              <form onSubmit={handleSubmit} className="space-y-4 pt-5">
+                <div className="space-y-2">
+                  <h3 className="text-center font-semibold ">TENHO INTERESSE</h3>
+                  <p className="text-center text-sm  ">
+                    <span className="font-bold ">Preencha o formulário</span> e nossa equipe entrará em contato
+                  </p>
+                </div>
+                <Input
+                  type="text"
+                  name="name "
+                  placeholder="Seu Nome"
+                  value={nome}
+                  onChange={(event) => setNome(event.target.value)}
+                />
+                <Input
+                  type="email"
+                  name="email"
+                  placeholder="E-mail"
+                  value={email}
+                  onChange={(event) => setEmail(event.target.value)}
+                />
+                <Input
+                  name="celular"
+                  placeholder="Celular com DDD"
+                  value={celular}
+                  onChange={(event) => setCelular(event.target.value)}
+                />
+                <Button type="submit" disabled={sending} className="w-full bg-customerSecondary hover:bg-blue-900 ">
+                  ENVIAR
+                </Button>
+              </form>
+            </div>
           </div>
         </div>
       </section>

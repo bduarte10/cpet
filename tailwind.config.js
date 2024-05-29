@@ -13,6 +13,8 @@ module.exports = {
     },
     extend: {
       colors: {
+        customerPrimary: "#FDD105",
+        customerSecondary: "#013C95",
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',

@@ -102,3 +102,29 @@
     }
   }
 }
+
+@keyframes piscar {
+  0% {
+      border-color: transparent;
+  }
+  50% {
+      border-color: #FDD105;
+      box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  100% {
+      border-color: transparent;
+      
+  }
+}
+
+.piscar-borda {
+  padding: 0px 4px;
+  border-radius: 8px;
+  border: 2px solid;
+  animation: piscar 2s infinite;
+  
+}
+
+
+
+

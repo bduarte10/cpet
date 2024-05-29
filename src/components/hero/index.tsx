@@ -1,10 +1,10 @@
-import imgHero from '@/assets/imgHero.png'
-import { Button } from '../ui/button'
-import { useRef, useEffect, useState } from 'react'
-import axios from 'axios'
-import { Input } from '../ui/input'
+import imgHero from '@/assets/amarelobolsa.png'
 import cpetLogo from '@/assets/cpet.png'
+import axios from 'axios'
+import { useEffect, useRef, useState } from 'react'
 import { toast } from 'sonner'
+import { Button } from '../ui/button'
+import { Input } from '../ui/input'
 
 interface FormData {
   nome: string
@@ -55,8 +55,8 @@ export const Hero = () => {
     <section
       id="hero"
       ref={topRef}
-      className="w-full bg-[url('@/assets/bg.jpg')] bg-cover  ">
-      <div className="h-full max-w-7xl mx-10 lg:mx-auto grid grid-cols-1 md:grid-cols-2 py-16 gap-32 ">
+      className="w-full bg-[url('@/assets/fundoazul.png')] bg-cover  ">
+      <div className="h-full max-w-7xl mx-10 gap-8 lg:mx-auto grid grid-cols-1 md:grid-cols-2 py-16 md:gap-32 ">
         <div className="order-2 md:order-1">
           <img
             src={imgHero}
@@ -64,7 +64,7 @@ export const Hero = () => {
             alt="hero img"
           />
         </div>
-        <div className="order-1 md:order-2 p-6 border-t-8 border-blue-800 bg-slate-100 rounded-md">
+        <div className="order-1 md:order-2 p-6 border-t-8 border-customerPrimary bg-white rounded-md">
           <img
             src={cpetLogo}
             alt="cpet logo"
@@ -72,11 +72,11 @@ export const Hero = () => {
           />
           <form onSubmit={handleSubmit} className="space-y-4 pt-5">
             <div className="space-y-2">
-              <h3 className="text-center text-xl tracking-tight font-semibold ">
+              <h3 className="text-neutral-700 text-center text-xl tracking-tight font-semibold ">
                 CURSOS TÉCNICOS NA CPET COM BOLSA DE ESTUDO
                 <br />À PARTIR DE R$79,99 POR MÊS.
                 <br />{' '}
-                <span className="text-green-500 block mt-2">
+                <span className="text-customerPrimary block mt-2">
                   GARANTA JÁ SUA BOLSA
                 </span>
               </h3>
@@ -85,9 +85,11 @@ export const Hero = () => {
                rounded-md flex items-center justify-center">
                 🏆 Maior Escola Técnica Do Brasil
               </p>
-              <span className="pt-2 text-lime-700 font-semibold w-full flex items-center justify-center gap-4 ">
+              <span className="pt-2 text-neutral-700 font-semibold w-full flex items-center justify-center gap-0 md:gap-4 ">
                 <hr className="w-[100px] border-b-1 border-slate-200" />
-                Fale com nosso consultor 💬
+                <span className='text-center '>
+                  Fale com nosso consultor 💬
+                </span>
                 <hr className="w-[100px] border-b-1 border-slate-200" />
               </span>
             </div>
@@ -115,7 +117,7 @@ export const Hero = () => {
               type="submit"
               disabled={sending}
               className="w-full 
-               bg-green-500 hover:bg-green-900 disabled:bg-green-500/80">
+               bg-customerPrimary text-neutral-700 hover:bg-yellow-300 disabled:bg-yellow-200">
               Tenho Interesse
             </Button>
           </form>

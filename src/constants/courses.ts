@@ -12,6 +12,7 @@ type ICourseData = {
     imgUrl: string;
     videoUrl?: string;
     curriculum?: CurriculumData;
+    mediaSalary?: string;
 };
 
 export const courseData: ICourseData[] = [
@@ -19,6 +20,7 @@ export const courseData: ICourseData[] = [
         id: "7283",
         imgUrl: image.comercioExt,
         videoUrl: "a_Qcva1BJIo",
+        mediaSalary: "2.868,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo – CBO 4110-05",
@@ -67,6 +69,7 @@ export const courseData: ICourseData[] = [
         id: "26",
         imgUrl: image.adm,
         videoUrl: "IqCc-0gUTLg",
+        mediaSalary: "2.407,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -147,6 +150,7 @@ export const courseData: ICourseData[] = [
     {
         id: "3213",
         imgUrl: image.agrimensura,
+        mediaSalary: "2.407,00",
         curriculum: [
             {
                 title: "Gerais",
@@ -215,6 +219,7 @@ export const courseData: ICourseData[] = [
         id: "4801",
         imgUrl: image.agro,
         videoUrl: "tWUcyhi8bwE",
+        mediaSalary: "2.534,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -284,6 +289,7 @@ export const courseData: ICourseData[] = [
         id: "7282",
         imgUrl: image.alimentEscolar,
         videoUrl: "Ei7ln8GrRRA",
+        mediaSalary: "2.000,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo – CBO 4110-05",
@@ -356,6 +362,7 @@ export const courseData: ICourseData[] = [
         id: "4802",
         imgUrl: image.automacaoInd,
         videoUrl: "TSMsiN3NpF0",
+        mediaSalary: "3.000,00",
         curriculum: [
             {
                 title: "Auxiliar Eletrotécnico – CBO 3131-05",
@@ -434,6 +441,7 @@ export const courseData: ICourseData[] = [
         id: "27",
         imgUrl: image.contabilidade,
         videoUrl: "XO-v0HEx1Tc",
+        mediaSalary: "2.496,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -500,6 +508,7 @@ export const courseData: ICourseData[] = [
         id: "19",
         imgUrl: image.edificacao,
         videoUrl: "VePcn68V9W4",
+        mediaSalary: "2.609,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo em Edificações – CBO – 4110-05",
@@ -583,6 +592,7 @@ export const courseData: ICourseData[] = [
         id: "4805",
         imgUrl: image.eletronica,
         videoUrl: "-JWvkTLvm5A",
+        mediaSalary: "2.500,00",
         curriculum: [
             {
                 title: "Auxiliar Eletrotécnico – CBO 3131-05",
@@ -656,6 +666,7 @@ export const courseData: ICourseData[] = [
         id: "20",
         imgUrl: image.eletrotec,
         videoUrl: "Op7QhyhWTbA",
+        mediaSalary: "2.632,00",
         curriculum: [
             {
                 title: "AUXILIAR ELETROTÉCNICO – CBO 3131-05",
@@ -726,6 +737,7 @@ export const courseData: ICourseData[] = [
         id: "15",
         imgUrl: image.estetica,
         videoUrl: "vY_RHk3AKFQ",
+        mediaSalary: "2.365,00",
         curriculum: [
             {
                 title: "Gerais I",
@@ -804,6 +816,7 @@ export const courseData: ICourseData[] = [
         id: "4806",
         imgUrl: image.financas,
         videoUrl: "2cMOEa9df-o",
+        mediaSalary: "2.262,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -855,6 +868,7 @@ export const courseData: ICourseData[] = [
         id: "7278",
         imgUrl: image.turismoInt,
         videoUrl: "5000sjH-11o",
+        mediaSalary: "2.400,00",
         curriculum: [
             {
                 title: "BLOCO 1",
@@ -884,6 +898,7 @@ export const courseData: ICourseData[] = [
         id: "7280",
         imgUrl: image.turismo3,
         videoUrl: "5000sjH-11o",
+        mediaSalary: "3.200,00",
         curriculum: [
             {
                 title: "AUXILIAR DE ESCRITÓRIO DE AGÊNCIA DE TURISMO - CBO 4110-05",
@@ -954,6 +969,7 @@ export const courseData: ICourseData[] = [
     {
         id: "7281",
         imgUrl: image.turismo,
+        mediaSalary: "2.400,00",
         videoUrl: "coraUkodpDc",
         curriculum: [
             {
@@ -1013,6 +1029,7 @@ export const courseData: ICourseData[] = [
         id: "7279",
         imgUrl: image.turismoAgua,
         videoUrl: "LsnjBF415nQ",
+        mediaSalary: "1.600,00",
         curriculum: [
             {
                 title: "Auxiliar de Escritório de Agência de Turismo - CBO 4110-05",
@@ -1058,6 +1075,7 @@ export const courseData: ICourseData[] = [
         id: "6311",
         imgUrl: image.infoInternet,
         videoUrl: "xn8RNBSE5Yw",
+        mediaSalary: "2.300,00",
         curriculum: [
             {
                 title: "AUXILIAR DE INSTRUTÓRIA DE INFORMÁTICA CBO – 2332-25",
@@ -1124,6 +1142,7 @@ export const courseData: ICourseData[] = [
         id: "39",
         imgUrl: image.logistica,
         videoUrl: "qfmGwPrl3w0",
+        mediaSalary: "1.600,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -1186,6 +1205,7 @@ export const courseData: ICourseData[] = [
         id: "4808",
         imgUrl: image.marketing,
         videoUrl: "wTxstaJH4Mg",
+        mediaSalary: "2.580,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -1239,6 +1259,7 @@ export const courseData: ICourseData[] = [
         id: "21",
         imgUrl: image.mecanica,
         videoUrl: "0JDpFbDaQ74",
+        mediaSalary: "2.900,00",
         curriculum: [
             {
                 title: "INTRODUÇÃO A MECÂNICA",
@@ -1315,6 +1336,7 @@ export const courseData: ICourseData[] = [
         id: "3215",
         imgUrl: image.meioAmb,
         videoUrl: "IIKxshW2QQA",
+        mediaSalary: "2.700,00",
         curriculum: [
             {
                 title: "AUXILIAR DE ESCRITÓRIO AMBIENTAL – CBO – 4110-05",
@@ -1367,6 +1389,7 @@ export const courseData: ICourseData[] = [
     {
         id: "1131",
         imgUrl: image.mineracao,
+        mediaSalary: "3.500,00",
         curriculum: [
             {
                 title: "GERAIS",
@@ -1428,6 +1451,7 @@ export const courseData: ICourseData[] = [
     {
         id: "3349",
         imgUrl: image.rh,
+        mediaSalary: "1.783,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo – CBO 4110-05",
@@ -1478,6 +1502,7 @@ export const courseData: ICourseData[] = [
     {
         id: "7285",
         imgUrl: image.redes,
+        mediaSalary: "1.915,00",
         curriculum: [
             {
                 title: "Conteúdo detalhado do curso",
@@ -1523,6 +1548,7 @@ export const courseData: ICourseData[] = [
         id: "4810",
         imgUrl: image.secEscolar,
         videoUrl: "BU9N9wTdcAE",
+        mediaSalary: "1.650,00",
         curriculum: [
             {
                 title: "AUXILIAR DE AGENTE DE ORGANIZAÇÃO ESCOLAR – CBO – 3321-10",
@@ -1584,6 +1610,7 @@ export const courseData: ICourseData[] = [
         id: "4811",
         imgUrl: image.secretariado,
         videoUrl: "aM1ZP_En_bI",
+        mediaSalary: "1.549,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -1640,6 +1667,7 @@ export const courseData: ICourseData[] = [
         id: "24",
         imgUrl: image.segurancaTrab,
         videoUrl: "FEcCYhWrFAY",
+        mediaSalary: "3.000,00",
         curriculum: [
             {
                 title: "Auxiliar Técnico em Segurança do Trabalho - CBO 3615-05",
@@ -1703,6 +1731,7 @@ export const courseData: ICourseData[] = [
         id: "6313",
         imgUrl: image.publicos,
         videoUrl: "hL9fyyHseEk",
+        mediaSalary: "2.400,00",
         curriculum: [
             {
                 title: "AUXILIAR ADMINISTRATIVO – CBO 4110-05",
@@ -1758,6 +1787,7 @@ export const courseData: ICourseData[] = [
         id: "5376",
         imgUrl: image.transacoesImob,
         videoUrl: "M0TaRVh39sU",
+        mediaSalary: "2.200,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo – CBO 4110-05",
@@ -1816,6 +1846,7 @@ export const courseData: ICourseData[] = [
         id: "4812",
         imgUrl: image.vendas,
         videoUrl: "mAnqklQTsJg",
+        mediaSalary: "2.200,00",
         curriculum: [
             {
                 title: "Auxiliar Administrativo – CBO 4110-05",
@@ -1866,6 +1897,7 @@ export const courseData: ICourseData[] = [
     {
         id: "3350",
         imgUrl: image.juridicos,
+        mediaSalary: "2.900,00",
         curriculum: [
             {
                 title: "Gerais",
