@@ -1,9 +1,11 @@
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import './global.css'
-import { QueryClientProvider, queryClient } from './service/react-query'
 import { AppLayout } from './pages/AppLayout'
-import { Home } from './pages/Home'
 import { Curso } from './pages/Curso'
+import { Home } from './pages/Home'
+import { TermPrivacy } from './pages/TermPrivacy'
+import { TermUsage } from './pages/TermUsage'
+import { QueryClientProvider, queryClient } from './service/react-query'
 
 const router = createBrowserRouter([
   {
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
         path: '/curso/:id',
         element: <Curso />,
       },
+      {
+        path: '/termos',
+        element: <TermUsage />,
+      },
+      {
+        path: '/privacidade',
+        element: <TermPrivacy />,
+      }
     ],
   },
 ])

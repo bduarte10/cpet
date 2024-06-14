@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export const Footer = () => {
   return (
     <footer className="w-full h-24 bg-slate-300 mt-auto">
@@ -8,6 +10,15 @@ export const Footer = () => {
             Copyright © {new Date().getFullYear()} ConectaEdu - Todos os
             direitos reservados.
           </p>
+
+          <Link to="/termos">
+            <p className="p-2">Termos de Uso</p>
+          </Link>
+
+          <Link to="/privacidade">
+            <p className="p-2">Termos de Privacidade</p>
+          </Link>
+
         </div>
       </div>
     </footer>
