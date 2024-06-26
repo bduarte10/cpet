@@ -30,7 +30,8 @@ const router = createBrowserRouter([
       }
     ],
   },
-])
+]);
+
 export function App() {
   return (
     <QueryClientProvider client={queryClient}>

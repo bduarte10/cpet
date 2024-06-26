@@ -1,3 +1,4 @@
+import { ScrollToTop } from '@/components/ScrollToTop'
 import { Footer } from '@/components/footer'
 import { Whatsapp } from '@/components/whatsapp'
 import { Outlet, useNavigation } from 'react-router-dom'
@@ -13,10 +14,13 @@ export function AppLayout() {
     <div className="grid h-screen grid-rows-[auto_1fr_auto]">
       {isLoading && <Loader />}
 
+
       <Header />
 
       <div className="overflow-auto">
+
         <main className="mx-auto ">
+          <ScrollToTop />
           <Outlet />
         </main>
         <Footer />
